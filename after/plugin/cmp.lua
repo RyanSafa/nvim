@@ -45,11 +45,8 @@ cmp.setup({
 			menu = {
 				buffer = "[buf]",
 				nvim_lsp = "[LSP]",
-				nvim_lua = "[api]",
 				path = "[path]",
 				luasnip = "[snip]",
-				gh_issues = "[issues]",
-				tn = "[TabNine]",
 			},
 		}),
 	},

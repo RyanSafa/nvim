@@ -10,20 +10,15 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 require("packer").startup(function(use)
-	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 	use("nvim-treesitter/nvim-treesitter")
 	use("neovim/nvim-lspconfig")
 	use({ "luisiacc/gruvbox-baby", branch = "main" })
-	use("preservim/nerdtree")
-	use("ryanoasis/vim-devicons")
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
-	use("tiagofumo/vim-nerdtree-syntax-highlight")
-	use("Xuyuanp/nerdtree-git-plugin")
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
@@ -36,11 +31,7 @@ require("packer").startup(function(use)
 	})
 	use("sainnhe/everforest")
 	use("arcticicestudio/nord-vim")
-	if packer_bootstrap then
-		require("packer").sync()
-	end
 	use({ "catppuccin/nvim", as = "catppuccin" })
-
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
@@ -54,4 +45,13 @@ require("packer").startup(function(use)
 	use("numToStr/Comment.nvim")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("p00f/nvim-ts-rainbow")
+	use({
+		"kyazdani42/nvim-tree.lua",
+		requires = {
+			"kyazdani42/nvim-web-devicons", -- optional, for file icons
+		},
+	})
+	if packer_bootstrap then
+		require("packer").sync()
+	end
 end)
