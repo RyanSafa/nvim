@@ -11,46 +11,64 @@ end
 
 require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
+
+	-- lsp and treesitter
 	use("nvim-treesitter/nvim-treesitter")
 	use("neovim/nvim-lspconfig")
-	use({ "luisiacc/gruvbox-baby", branch = "main" })
+	use("onsails/lspkind.nvim")
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use("p00f/nvim-ts-rainbow")
+
+	-- autcomplete
+	use("hrsh7th/nvim-cmp")
+	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-path")
+
+	-- cmp additions
+	use("windwp/nvim-ts-autotag")
+	use("windwp/nvim-autopairs")
+	use("L3MON4D3/LuaSnip")
+	use("numToStr/Comment.nvim")
+
+	-- fuzzy finder
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
+
+	-- status bar
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
+
+	-- git integration
 	use({
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup()
 		end,
 	})
-	use("sainnhe/everforest")
-	use("arcticicestudio/nord-vim")
-	use({ "catppuccin/nvim", as = "catppuccin" })
-	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-	use("L3MON4D3/LuaSnip")
-	use("onsails/lspkind.nvim")
 
-	use("windwp/nvim-ts-autotag")
-	use("windwp/nvim-autopairs")
+	-- formatting and linting
 	use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
-	use("numToStr/Comment.nvim")
-	use("JoosepAlviste/nvim-ts-context-commentstring")
-	use("p00f/nvim-ts-rainbow")
+
+	-- file explorer
 	use({
 		"kyazdani42/nvim-tree.lua",
 		requires = {
 			"kyazdani42/nvim-web-devicons", -- optional, for file icons
 		},
 	})
+
+	-- colorschemes
+	use({ "luisiacc/gruvbox-baby", branch = "main" })
+	use("sainnhe/everforest")
+	use("arcticicestudio/nord-vim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

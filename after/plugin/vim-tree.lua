@@ -4,7 +4,6 @@ local nnoremap = require("ryansafa.keymap").nnoremap
 -- map <leader>r :NERDTreeFind<cr>
 require("nvim-tree").setup({
 	disable_netrw = true,
-	auto_close = true,
 	filters = {
 		dotfiles = true,
 		custom = {
