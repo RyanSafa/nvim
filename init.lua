@@ -65,9 +65,6 @@ require("packer").startup(function(use)
 
 	-- colorschemes
 	use({ "luisiacc/gruvbox-baby", branch = "main" })
-	use("sainnhe/everforest")
-	use("arcticicestudio/nord-vim")
-	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	if packer_bootstrap then
 		require("packer").sync()
