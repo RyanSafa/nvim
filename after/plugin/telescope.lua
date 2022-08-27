@@ -29,6 +29,10 @@ nnoremap("<leader>gb", function()
 	require("telescope.builtin").git_branches(require("telescope.themes").get_dropdown({ bufnr = 0 }))
 end)
 
+nnoremap("<leader>gc", function()
+	require("telescope.builtin").git_commits(require("telescope.themes").get_dropdown({ bufnr = 0 }))
+end)
+
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
 	return

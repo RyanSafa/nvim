@@ -65,6 +65,7 @@ require("packer").startup(function(use)
 
 	-- colorschemes
 	use({ "luisiacc/gruvbox-baby", branch = "main" })
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	if packer_bootstrap then
 		require("packer").sync()

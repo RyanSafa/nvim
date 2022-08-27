@@ -8,5 +8,8 @@ require("nvim-tree").setup({
 			"^node_modules",
 		},
 	},
+	renderer = {
+		indent_markers = { enable = true },
+	},
 })
 nnoremap("<leader>n", ":NvimTreeToggle<CR>")
