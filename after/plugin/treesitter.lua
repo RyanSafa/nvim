@@ -15,11 +15,6 @@ configs.setup({
 	autotag = {
 		enable = true,
 	},
-	rainbow = {
-		enable = true,
-		extended_mode = true,
-		max_file_lines = 1000,
-	},
 	context_commentstring = {
 		enabel = true,
 		enable_autocmd = false,

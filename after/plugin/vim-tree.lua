@@ -11,5 +11,8 @@ require("nvim-tree").setup({
 	renderer = {
 		indent_markers = { enable = true },
 	},
+	view = {
+		width = 30,
+	},
 })
 nnoremap("<leader>n", ":NvimTreeToggle<CR>")

@@ -17,7 +17,7 @@ require("packer").startup(function(use)
 	use("neovim/nvim-lspconfig")
 	use("onsails/lspkind.nvim")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
-	use("p00f/nvim-ts-rainbow")
+	use("lukas-reineke/indent-blankline.nvim")
 
 	-- autcomplete
 	use("hrsh7th/nvim-cmp")
@@ -65,7 +65,7 @@ require("packer").startup(function(use)
 
 	-- colorschemes
 	use({ "luisiacc/gruvbox-baby", branch = "main" })
-	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("rebelot/kanagawa.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()
