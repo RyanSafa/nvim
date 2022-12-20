@@ -66,7 +66,7 @@ require("packer").startup(function(use)
 	-- colorschemes
 	use({ "luisiacc/gruvbox-baby", branch = "main" })
 	use("rebelot/kanagawa.nvim")
-
+	use("olimorris/onedarkpro.nvim")
 	if packer_bootstrap then
 		require("packer").sync()
 	end

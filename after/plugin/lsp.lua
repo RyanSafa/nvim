@@ -49,11 +49,13 @@ diagnostic_setup()
 
 local function config(_config)
 	return vim.tbl_deep_extend("force", {
-		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+		capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
 		on_attach = function(client)
 			if client.name == "tsserver" then
-				client.resolved_capabilities.document_formatting = false
+				client.server_capabilities.documentFormattingProvider = false
 			elseif client.name == "sumneko_lua" then
+				client.server_capabilities.documentFormattingProvider = false
+			elseif client.name == "rust_analyzer" then
 				client.resolved_capabilities.document_formatting = false
 			end
 			nnoremap("gd", function()
@@ -112,3 +114,4 @@ lspconfig.sumneko_lua.setup(config({
 		},
 	},
 }))
+lspconfig.rust_analyzer.setup(config())
