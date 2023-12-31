@@ -10,3 +10,6 @@ nnoremap("U", ":m .-2<CR>==")
 nnoremap("B", ":m .+1<CR>==")
 vnoremap("U", ":m '<-2<CR>gv=gv")
 vnoremap("B", ":m '>+1<CR>gv=gv")
+
+vnoremap("<Tab>", ">gv")
+vnoremap("<S-Tab>", "<gv")

@@ -3,9 +3,9 @@ vim.opt.relativenumber = true
 
 vim.opt.errorbells = false
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
 vim.opt.smartindent = true
 
@@ -30,6 +30,11 @@ vim.g.mapleader = " "
 
 vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
+
+vim.o.ls = 0
+vim.o.ch = 0
+vim.cmd [[ set guicursor=n-v-c-i:block ]]
+vim.cmd [[set clipboard+=unnamedplus]]
 
 vim.api.nvim_command("set splitbelow splitright")
 vim.api.nvim_command("filetype plugin indent on")

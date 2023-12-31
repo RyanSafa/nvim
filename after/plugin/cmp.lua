@@ -20,7 +20,6 @@ cmp.setup({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
 		}),
-
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<Tab>"] = function(fallback)
 			if cmp.visible() then
@@ -37,7 +36,6 @@ cmp.setup({
 			end
 		end,
 	},
-
 	formatting = {
 		-- Youtube: How to set up nice formatting for your sources.
 		format = lspkind.cmp_format({
