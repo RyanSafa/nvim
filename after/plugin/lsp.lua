@@ -80,24 +80,28 @@ local function config(_config)
 			elseif client.name == "pyright" then
 				client.server_capabilities.documentFormattingProvider = false
 			end
-			nnoremap("gd", function()
+			nnoremap("gd", function() -- go to definition
 				vim.lsp.buf.definition()
 			end, { buffer = 0 })
-			nnoremap("K", function()
+			nnoremap("vd", function()  -- vertical split, then go to definition
+				vim.cmd([[vsplit]])
+				vim.lsp.buf.definition()
+			end, {buffer = 0 })
+			nnoremap("K", function() -- type definition hover
 				vim.lsp.buf.hover()
 			end, { buffer = 0 })
 			nnoremap(
-				"<leader>s",
+				"<leader>s", -- diagnostic hover
 				'<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>',
 				{ silent = true, buffer = 0 }
 			)
-			nnoremap("<leader>df", function()
+			nnoremap("<leader>df", function() -- go to next diagnostic error
 				vim.diagnostic.goto_next()
 			end, { buffer = 0 })
-			nnoremap("<leader>dp", function()
+			nnoremap("<leader>dp", function() -- go to previous diagnostic error
 				vim.diagnostic.goto_prev()
 			end, { buffer = 0 })
-			nnoremap("<leader>ca", function()
+			nnoremap("<leader>ca", function() 
 				vim.lsp.buf.code_action()
 			end, { buffer = 0 })
 			nnoremap("<leader>re", function()
