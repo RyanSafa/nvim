@@ -58,8 +58,14 @@ require("packer").startup(function(use)
 	})
 
 	-- formatting and linting
-	use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
-
+require("packer").startup(function()
+  use({
+    "stevearc/conform.nvim",
+    config = function()
+      require("conform").setup()
+    end,
+  })
+end)
 	-- file explorer
 	use({
 		"kyazdani42/nvim-tree.lua",
@@ -68,9 +74,11 @@ require("packer").startup(function(use)
 		},
 	})
 
+	-- file navigation
+	use("ThePrimeagen/harpoon")
+
 	-- colorschemes
 	use({ "luisiacc/gruvbox-baby", branch = "main" })
-
 	if packer_bootstrap then
 		require("packer").sync()
 	end

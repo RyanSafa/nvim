@@ -121,6 +121,7 @@ telescope.setup({
 		-- builtin picker
 	},
 	extensions = {
+		harpoon = {}
 		-- Your extension configuration goes here:
 		-- extension_name = {
 		--   extension_config_key = value,

@@ -13,3 +13,12 @@ vnoremap("B", ":m '>+1<CR>gv=gv")
 
 vnoremap("<Tab>", ">gv")
 vnoremap("<S-Tab>", "<gv")
+
+nnoremap('hx', require('harpoon.mark').add_file)
+nnoremap('((', require('harpoon.ui').nav_next)
+nnoremap('))', require('harpoon.ui').nav_prev)
+nnoremap('hm', require('harpoon.ui').toggle_quick_menu)
+
+for i=1, 9 do
+	nnoremap('<leader>' .. i, function() require('harpoon.ui').nav_file(i) end)
+end

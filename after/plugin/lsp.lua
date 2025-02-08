@@ -25,7 +25,7 @@ local diagnostic_setup = function()
 		underline = true,
 		severity_sort = true,
 		float = {
-			focusable = false,
+			focusable = true,
 			style = "minimal",
 			border = "rounded",
 			source = "always",
@@ -108,7 +108,7 @@ local function config(_config)
 				vim.lsp.buf.references()
 			end, { buffer = 0 })
 			nnoremap("<leader>fd", function()
-				vim.lsp.buf.format()
+    require("conform").format()
 			end, { buffer = 0 })
 			nnoremap("<leader>rn", function()
 				vim.lsp.buf.rename()
@@ -118,7 +118,7 @@ local function config(_config)
 end
 
 local lspconfig = require("lspconfig")
-lspconfig.tsserver.setup(config())
+lspconfig.ts_ls.setup(config())
 lspconfig.cssls.setup(config())
 lspconfig.html.setup(config())
 lspconfig.pyright.setup(config())

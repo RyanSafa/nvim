@@ -8,16 +8,16 @@ require("Comment").setup({
 	---LHS of toggle mappings in NORMAL mode
 	toggler = {
 		---Line-comment toggle keymap
-		line = "++",
+		line = "<C-_>",
 		---Block-comment toggle keymap
 		block = "+-",
 	},
 	---LHS of operator-pending mappings in NORMAL and VISUAL mode
 	opleader = {
 		---Line-comment keymap
-		line = "++",
+		line = "<C-_>",
 		---Block-comment keymap
-		block = "+-",
+		block = "<C-_>",
 	},
 	---LHS of extra mappings
 	extra = {
